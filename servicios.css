@@ -1,0 +1,422 @@
+/* servicios.css - Specific stylesheet for ExpressGO Services page */
+
+/* Collage Hero Layout */
+.services-hero {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+}
+
+.services-hero-grid {
+  display: grid;
+  grid-template-columns: 48% 52%;
+  gap: 40px;
+  align-items: center;
+}
+
+.services-collage-wrapper {
+  position: relative;
+  height: 320px;
+}
+
+.collage-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+.collage-item {
+  background-color: var(--color-surface-dark);
+  border: var(--glass-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: var(--transition);
+  padding: 12px;
+}
+
+.collage-item:hover {
+  transform: scale(1.03);
+  border-color: var(--color-primary);
+}
+
+.collage-item.furgoneta {
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+  padding: 0;
+}
+
+.collage-item.furgoneta svg {
+  width: 100%;
+  height: 100%;
+}
+
+.collage-item.conductora {
+  grid-column: 4 / 7;
+  grid-row: 1 / 4;
+  background: radial-gradient(circle, rgba(140, 191, 38, 0.1) 0%, rgba(18, 25, 31, 1) 100%);
+}
+
+.collage-item.mascota {
+  grid-column: 1 / 3;
+  grid-row: 4 / 7;
+}
+
+.collage-item.paquetes {
+  grid-column: 3 / 7;
+  grid-row: 4 / 7;
+}
+
+.collage-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.collage-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* Sticky Service Submenu index */
+.services-index-bar {
+  position: sticky;
+  top: 84px;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-surface-dark-sec);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  z-index: 900;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  transition: var(--transition);
+}
+
+.header.scrolled + main .services-index-bar {
+  top: 72px;
+}
+
+.index-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 58px;
+}
+
+.index-bar-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-light);
+}
+
+.index-bar-links {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  height: 100%;
+}
+
+.index-bar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-light);
+  height: 100%;
+  border-bottom: 3px solid transparent;
+  transition: var(--transition);
+}
+
+.index-bar-link:hover, .index-bar-link.active {
+  color: var(--color-primary-bright);
+  border-bottom-color: var(--color-primary);
+  background-color: rgba(255,255,255,0.02);
+}
+
+.index-bar-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Alternating Details Sections */
+.service-detail-section {
+  padding-top: 112px;
+  padding-bottom: 112px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.bg-surface {
+  background-color: var(--color-surface-dark);
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 52% 48%;
+  gap: 60px;
+  align-items: center;
+}
+
+.service-detail-grid.alternate {
+  grid-template-columns: 48% 52%;
+}
+
+.service-detail-grid.alternate .service-detail-info {
+  order: 2;
+}
+
+.service-detail-grid.alternate .service-detail-visual {
+  order: 1;
+}
+
+.service-headline {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.service-intro {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  margin-bottom: 24px;
+}
+
+.service-main-benefit {
+  background-color: rgba(140, 191, 38, 0.08);
+  border-left: 3px solid var(--color-primary);
+  padding: 16px 20px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 15px;
+  color: var(--color-white);
+  margin-bottom: 36px;
+}
+
+.service-main-benefit strong {
+  color: var(--color-primary-bright);
+}
+
+/* Specific Alerts / Exclusions Box for PetTrip */
+.service-warning-box {
+  background-color: rgba(239, 68, 68, 0.08);
+  border-left: 3px solid #EF4444;
+  padding: 16px 20px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 14px;
+  color: #F87171;
+  margin-bottom: 36px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  line-height: 1.6;
+}
+
+.service-warning-box svg {
+  color: #EF4444;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Checklist Grids */
+.service-checklist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 20px;
+  margin-bottom: 36px;
+}
+
+.service-check-item {
+  display: flex;
+  gap: 14px;
+}
+
+.check-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background-color: var(--color-surface-dark-sec);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-bright);
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.check-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.service-check-item h5 {
+  font-size: 15px;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.service-check-item p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
+/* Cases and limitations lists */
+.service-cases {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 24px;
+  margin-bottom: 36px;
+}
+
+.service-cases strong {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.cases-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cases-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.cases-list li svg {
+  width: 14px;
+  height: 14px;
+  color: var(--color-primary-bright);
+  flex-shrink: 0;
+}
+
+/* Visual graphics */
+.service-detail-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.service-svg-graphic {
+  width: 100%;
+  max-width: 480px;
+  border: var(--glass-border);
+  border-radius: 28px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  aspect-ratio: 4 / 3;
+}
+
+/* Final CTA for services page */
+.final-services-cta {
+  background-color: var(--color-dark);
+  position: relative;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .services-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .services-collage-wrapper {
+    height: 240px;
+  }
+  
+  .index-bar-title {
+    display: none;
+  }
+  
+  .index-bar-container {
+    justify-content: center;
+  }
+  
+  .service-detail-grid, .service-detail-grid.alternate {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .service-detail-grid.alternate .service-detail-info {
+    order: 1;
+  }
+  
+  .service-detail-grid.alternate .service-detail-visual {
+    order: 2;
+  }
+  
+  .service-detail-visual {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    padding-top: 60px;
+    padding-bottom: 50px;
+  }
+  
+  .services-index-bar {
+    top: 72px;
+  }
+  
+  .index-bar-links {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0 10px;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
+  
+  .index-bar-links::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+  }
+  
+  .index-bar-link {
+    white-space: nowrap;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+  
+  .service-detail-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  
+  .service-headline {
+    font-size: 26px;
+  }
+  
+  .service-checklist-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
